@@ -1,0 +1,74 @@
+version:
+  detected: "[WL] サーバーバージョン: %version%"
+  adapter_loaded: "[WL] バージョンアダプター: %adapter%"
+  debug_info: "[デバッグ] アクティブアダプター: %adapter% (v%version%)"
+
+error:
+  version_not_supported: "[WL] エラー: サーバーバージョン %version% はサポートされていません！"
+  adapter_load_failed: "[WL] エラー: バージョンアダプターの読み込みに失敗しました！"
+
+command:
+  no_permission: "このコマンドを使用する権限がありません！"
+  reload_success: "設定を再読み込みしました！"
+  help:
+    header: "=== WorldLimit ヘルプ ==="
+    reload: "/wl reload - 設定を再読み込み"
+    add: "/wl add <ワールド> <タイプ> [引数] - ワールドアクセス条件を追加"
+    remove: "/wl remove <ワールド> <インデックス> - 指定した条件を削除"
+    list: "/wl list [ワールド] - ワールド条件一覧を表示"
+    info: "/wl info <ワールド> - ワールドの詳細情報を表示"
+    lang: "/wl lang <list|set|default> - 言語設定"
+    debug: "/wl debug <オプション> - デバッグツール"
+  usage:
+    add_item: "使用法: /wl add <ワールド> item <アイテムID> [個数] [名前] [説明]"
+    add_permission: "使用法: /wl add <ワールド> permission <権限ノード>"
+    add_variable: "使用法: /wl add <ワールド> variable <変数> <演算子> <値>"
+    add_cooldown: "使用法: /wl add <ワールド> cooldown <時間(秒)>"
+    lang_set: "使用法: /wl lang set <言語> <プレイヤー>"
+    lang_default: "使用法: /wl lang default <言語>"
+    world_info: "使用法: /wl info <ワールド>"
+    world_remove: "使用法: /wl remove <ワールド> <インデックス>"
+    world_add: "使用法: /wl add <ワールド> <タイプ> [引数]"
+  debug:
+    usage: "使用法: /wl debug <version|player> [プレイヤー名]"
+    no_permission: "デバッグコマンドを使用する権限がありません！"
+    version_info: "=== バージョン情報 ==="
+    server_version: "サーバーバージョン: %version%"
+    nms_version: "NMSバージョン: %nms%"
+    adapter_name: "アクティブアダプター: %adapter%"
+    modern_support: "モダンAPI対応: %modern%"
+
+monitor:
+  version_downgrade: "基本モードに切り替えています..."
+  variable_isolated: "変数 %variable% を隔離しました（5分後に再試行）"
+  thread_expansion: "スレッドプールを拡張しています..."
+  stats_header: "=== 監視統計 ==="
+  exception_count: "%type%: %count% 回"
+
+world:
+  access_denied: "このワールドにアクセスできません！"
+  cooldown: "再入場まで {time} 秒お待ちください！"
+  conditions:
+    item_required: "アイテム %item% が必要です！"
+    permission_required: "必要な権限がありません！"
+    variable_check_failed: "条件を満たしていません！"
+    cooldown_active: "クールダウン中です！"
+  not_found: "ワールドが見つかりません: %world%"
+  condition_added: "%type%チェック条件を追加しました"
+  condition_removed: "条件を削除しました"
+  invalid_amount: "無効な数値です: %value%"
+  invalid_index: "条件インデックスが範囲外です: 1-%max%"
+  list_header: "=== %world%の条件一覧 ==="
+  no_conditions: "条件がありません"
+  worlds_header: "=== 設定済みワールド一覧 ==="
+  status_enabled: "有効"
+  status_disabled: "無効"
+
+lang:
+  list_header: "=== 対応言語 ==="
+  default_mark: " (デフォルト)"
+  player_set: "%player%の言語を%lang%に設定しました"
+  player_set_self: "言語が%lang%に設定されました"
+  default_set: "デフォルト言語を%lang%に設定しました"
+  not_found: "未対応の言語です: %lang%"
+  player_not_found: "プレイヤーが見つかりません: %player%" 

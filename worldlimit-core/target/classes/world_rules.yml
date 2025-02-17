@@ -1,0 +1,238 @@
+# WorldLimit World Rules Configuration
+# WorldLimit 世界规则配置
+
+# ========================
+# World-specific settings
+# 世界特定设置
+# ========================
+worlds:
+  # Example configuration for the nether world
+  # 下界世界的示例配置
+  world_nether:
+    # Whether this world's rules are enabled
+    # 是否启用此世界的规则
+    enabled: true
+    
+    # Messages shown to players
+    # 显示给玩家的消息
+    message:
+      # Message shown when access is denied
+      # 拒绝访问时显示的消息
+      deny: "&c你不能进入这个世界！"
+      
+      # Cooldown message (use {time} for remaining time)
+      # 冷却时间消息（使用 {time} 表示剩余时间）
+      cooldown: "&e你需要等待 {time} 秒才能再次进入！"
+    
+    # Entry conditions that must be met
+    # 必须满足的进入条件
+    conditions:
+      # ===== 物品检查示例 =====
+      # Item check example
+      - type: item
+        # 物品ID和数据值 (例如: DIAMOND_SWORD:0)
+        # Item ID and data value
+        item: "DIAMOND_SWORD:0"
+        # 所需数量
+        # Required amount
+        amount: 1
+        # 自定义物品名称
+        # Custom item name
+        name: "§6下界之剑"
+        # 物品描述
+        # Item lore
+        lore:
+          - "§7这把剑可以让你"
+          - "§7进入下界"
+        # 失败消息
+        # Failure message
+        message: "&c你需要一把下界之剑才能进入！"
+      
+      # ===== 权限检查示例 =====
+      # Permission check example
+      # - type: permission
+        # 所需权限
+        # Required permission
+        # permission: "worldlimit.world.nether"
+        # 失败消息
+        # Failure message
+        # message: "&c你没有权限进入这个世界！"
+
+      # ===== 变量数值比较示例 =====
+      # Variable numeric comparison example
+      # - type: variable
+        # PAPI变量，用于检查玩家等级
+        # PlaceholderAPI variable for checking player level
+        # variable: "%player_level%"
+        # 比较运算符: >=, >, <, <=, ==, !=
+        # Comparison operator
+        # operator: ">="
+        # 要求玩家等级至少为10级
+        # Required level value
+        # value: 10
+        # 失败消息
+        # Failure message
+        # message: "&c你需要达到10级才能进入！"
+      
+      # ===== 变量范围检查示例 =====
+      # Variable range check example
+      # - type: variable
+        # 检查玩家生命值是否在指定范围内
+        # Check if player health is within range
+        # variable: "%player_health%"
+        # 范围检查运算符
+        # Range check operator
+        # operator: "range"
+        # 最小值
+        # Minimum value
+        # min: 15
+        # 最大值
+        # Maximum value
+        # max: 20
+        # 失败消息
+        # Failure message
+        # message: "&c你的生命值必须在15-20之间才能进入！"
+      
+      # ===== 冷却时间示例 =====
+      # Cooldown check example
+      # - type: cooldown
+        # 冷却时间（秒）
+        # Cooldown duration in seconds
+        # time: 300
+        # 绕过冷却时间的权限
+        # Permission to bypass cooldown
+        # permission_bypass: "worldlimit.bypass.cooldown"
+        # 失败消息
+        # Failure message
+        # message: "&e你需要等待 {time} 秒才能再次进入！"
+
+  # ===== 末地世界配置示例 =====
+  # The End world example configuration
+  world_the_end:
+    enabled: true
+    message:
+      deny: "&c你不能进入末地！"
+    conditions:
+      # ===== 物品数量检查 =====
+      # Item quantity check
+      - type: item
+        # 末影之眼物品
+        # Ender Eye item
+        item: "ENDER_EYE:0"
+        # 需要12个末影之眼
+        # Required amount
+        amount: 12
+        # 失败消息
+        # Failure message
+        message: "&c你需要12个末影之眼才能进入末地！"
+      
+      # ===== 生命值检查 =====
+      # Health check
+      - type: variable
+        # 检查玩家当前生命值
+        # Check player current health
+        variable: "%player_health%"
+        # 比较运算符
+        # Comparison operator
+        operator: ">="
+        # 最小生命值
+        # Minimum health value
+        value: 15
+        # 失败消息
+        # Failure message
+        message: "&c你的生命值必须高于15才能进入末地！"
+      
+      # ===== 经验值范围检查 =====
+      # Experience range check
+      # - type: variable
+        # 检查玩家经验值是否在指定范围内
+        # Check if player experience is within range
+        # variable: "%player_exp%"
+        # 范围检查运算符
+        # Range check operator
+        # operator: "range"
+        # 最小经验值
+        # Minimum experience
+        # min: 1000
+        # 最大经验值
+        # Maximum experience
+        # max: 9999
+        # 失败消息
+        # Failure message
+        # message: "&c你的经验值必须在1000-9999之间！"
+
+# ========================
+# Global settings
+# 全局设置
+# ========================
+
+# Default messages
+# 默认消息
+messages:
+  # Default deny message
+  # 默认拒绝消息
+  deny: "&c你不能进入这个世界！"
+  
+  # Default cooldown message
+  # 默认冷却消息
+  cooldown: "&e你需要等待 {time} 秒才能再次进入！"
+
+# Global cooldown settings
+# 全局冷却设置
+cooldown:
+  # Whether to enable global cooldown
+  # 是否启用全局冷却
+  enabled: false
+  
+  # Global cooldown time in seconds
+  # 全局冷却时间（秒）
+  time: 60
+  
+  # Global cooldown bypass permission
+  # 全局冷却绕过权限
+  permission_bypass: "worldlimit.bypass.global_cooldown"
+
+# Variable check settings
+# 变量检查设置
+variable_check:
+  # How to handle unavailable variables: DENY, ALLOW, SKIP
+  # 变量不可用时的处理方式：
+  # - DENY: 拒绝访问
+  # - ALLOW: 允许访问
+  # - SKIP: 跳过此条件
+  unavailable_action: "DENY"
+
+# ========================
+# Supported operators
+# 支持的运算符
+# ========================
+
+# Numeric operators / 数值运算符:
+# ==    Equal to / 等于
+# !=    Not equal to / 不等于
+# >     Greater than / 大于
+# <     Less than / 小于
+# >=    Greater than or equal to / 大于等于
+# <=    Less than or equal to / 小于等于
+# range Within range / 在范围内
+
+# Text operators / 文本运算符:
+# contains  Contains text / 包含文本
+# starts    Starts with text / 以文本开头
+# ends      Ends with text / 以文本结尾
+# matches   Matches regex pattern / 匹配正则表达式
+
+# ========================
+# Built-in variables
+# 内置变量
+# ========================
+
+# Player stats / 玩家状态:
+# %player_health%      Current health / 当前生命值
+# %player_max_health%  Maximum health / 最大生命值
+# %player_food%        Food level / 饥饿值
+# %player_level%       Experience level / 经验等级
+# %player_exp%         Experience points / 经验值
+# %player_world%       Current world / 当前世界
+# %player_gamemode%    Game mode / 游戏模式
+# %player_flying%      Flying state / 飞行状态 

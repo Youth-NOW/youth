@@ -1,0 +1,32 @@
+# WorldLimit Configuration File
+# WorldLimit 配置文件
+
+# Plugin language setting (Supported: en_US, zh_CN)
+# 插件语言设置（支持：en_US, zh_CN）
+language: zh_CN
+
+# Debug mode - enables detailed logging and in-game messages
+# 调试模式 - 启用详细日志和游戏内消息
+debug: false
+
+# Version adapter settings
+# 版本适配器设置
+version:
+  # Show version info on startup
+  # 在启动时显示版本信息
+  show_info: true
+  
+  # Allow running on unsupported versions (not recommended)
+  # 允许在不支持的版本上运行（不推荐）
+  force_enable: false
+
+# Cache settings
+# 缓存设置
+cache:
+  # Variable cache duration in milliseconds
+  # 变量缓存时间（毫秒）
+  variable_duration: 1000
+  
+  # Whether to enable variable caching
+  # 是否启用变量缓存
+  variable_enabled: true 

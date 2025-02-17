@@ -1,0 +1,6 @@
+com\example\worldlimit\api\variable\Condition.class
+com\example\worldlimit\api\variable\VariableProvider$VariableType.class
+com\example\worldlimit\api\version\VersionAdapter.class
+com\example\worldlimit\api\version\VersionDetector.class
+com\example\worldlimit\api\variable\Condition$Operator.class
+com\example\worldlimit\api\variable\VariableProvider.class

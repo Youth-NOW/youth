@@ -1,0 +1,24 @@
+name: WorldLimit
+version: '1.0-SNAPSHOT'
+main: com.example.worldlimit.WorldLimitPlugin
+api-version: 1.13
+authors: [Example]
+description: A world access control plugin with version isolation system
+softdepend: [PlaceholderAPI]
+
+commands:
+  wl:
+    description: WorldLimit main command
+    usage: /<command> <subcommand> [args]
+    permission: worldlimit.admin
+
+permissions:
+  worldlimit.admin:
+    description: Allows access to all WorldLimit commands
+    default: op
+  worldlimit.debug:
+    description: Allows access to debug commands
+    default: op
+  worldlimit.bypass:
+    description: Allows bypassing world access restrictions
+    default: op 
